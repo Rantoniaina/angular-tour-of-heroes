@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
@@ -9,7 +10,7 @@ import { Hero } from '../hero';
   styleUrls: ['./heroes.component.scss'],
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Observable<Hero[]>;
   selectedHero: Hero;
 
   constructor(private heroService: HeroService) {}
